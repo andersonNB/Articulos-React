@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 // import SeccionPruebas from './components/SeccionPruebas'
-import Prueba from './components/Prueba'
+import Formulario from './components/Formulario'
 // import Peliculas from "./components/Peliculas";
 // import App from "./App";
 import Error from './components/Error'
@@ -24,7 +24,7 @@ class Router extends Component {
                     <Routes>
                         <Route exact path="/" element={ <Home /> } />
                         <Route path="/blog" element={ <Blog /> } />
-                        <Route path="/ruta-prueba" element={ <Prueba /> } />
+                        <Route path="/ruta-prueba" element={ <Formulario /> } />
                         <Route exact path="/pagina-1" element={ <h1 className="subheader">Texto Creado desde la misma ruta</h1> } />
                         <Route path="/pruebas/:id" element={ <MiComponentePrueba /> } />
                         <Route path="/navigate" element={ <Navigate to="/pagina-1" /> } />

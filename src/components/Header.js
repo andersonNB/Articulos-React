@@ -29,20 +29,23 @@ class Header extends Component {
                                 <NavLink to="/blog">Blog</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/pagina-1">Formulario</NavLink>
+                                <NavLink to="/pagina-1">Página 4</NavLink>
                             </li>
                             <li>
-                                <Link to={ `/noExisteNRouter/${usuario}` }>Pagina 1</Link>
+                                <Link to={ `/noExisteNRouter/${usuario}` }>Página 1</Link>
                             </li>
                             <li>
-                                <NavLink to="/pruebas/">Pagina 2</NavLink>
+                                <NavLink to="/pruebas/">Página 2</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/navigate">Pagina 3</NavLink>
+                                <NavLink to="/navigate">Página 3</NavLink>
                             </li>
                             <li>
+                                <NavLink to="/ruta-prueba">Formulario</NavLink>
+                            </li>
+                            {/* <li>
                                 <NavLink to="/subRuta">Pagina 4</NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                     {/* <Outlet /> */ }
