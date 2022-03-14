@@ -8,7 +8,7 @@ class Formulario extends Component {
     bioRef = React.createRef();
     radioH = React.createRef();
     radioM = React.createRef();
-    // radioOtro = React.createRef();
+    radioOtro = React.createRef();
 
 
     state = {
@@ -22,13 +22,15 @@ class Formulario extends Component {
 
         let genero = "";
 
-        if (this.radioH.current.value == "Hombre") {
-            genero = "Hombre"
-        } else if (this.radioM.current.value == "Mujer") {
-            genero = "Mujer"
+        if (this.radioH.current.value === "hombre") {
+            genero = "hombre"
+        } else if (this.radioM.current.value === "mujer") {
+            genero = "mujer"
         } else {
-            genero = "Otro"
+            genero = "otro"
         }
+
+        console.log(genero)
 
         let user = {
             nombre: this.nombreRef.current.value,

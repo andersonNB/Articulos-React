@@ -85,7 +85,7 @@ class SeccionPruebas extends Component {
                     <p style={ { width: '500px', height: '500px', border: '1px solid salmon' } }>
                         {
                             this.state.giphy &&
-                            <img src={ this.state.giphy } href={ this.state.gip }></img>
+                            <img src={ this.state.giphy } href={ this.state.giphy }></img>
                         }
                     </p>
                 </section>

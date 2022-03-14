@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import '../assets/css/Peliculas.css';
 
 class Pelicula extends Component {
 
@@ -8,7 +8,16 @@ class Pelicula extends Component {
         console.log("props", props)
         this.state = {
             peliculas: this.props.peliculas,
+            img: null,
+            imageApi: null,
+            nameApi: "",
         };
+    }
+
+
+
+    componentDidMount() {
+        this.getCharacteres();
     }
 
     cambiarPropiedad = () => {
@@ -56,6 +65,22 @@ class Pelicula extends Component {
         this.props.marcarFavoritaPadre(item, key)
     };
 
+    getCharacteres = async () => {
+
+        const peticion = await fetch(`https://rickandmortyapi.com/api/character/1`)
+            .then((res) => res.json())
+        console.log("peticion", peticion)
+
+        const { image, name } = peticion;
+
+        console.log("Imagen", image)
+        this.setState({
+            imageApi: image,
+            nameApi: name,
+        });
+
+    }
+
 
     render() {
         console.log("props render", this.props);
@@ -63,6 +88,7 @@ class Pelicula extends Component {
         console.log("destruc peliculas props", peliculas.titulo)
 
         return (
+
             <div id="articles" className="peliculas">
                 <button onClick={ this.cambiarPropiedad }>Cambiar propiedad titulo</button>
                 <button onClick={ this.limpiarTitulos }>Regresar titulos</button>
@@ -81,6 +107,22 @@ class Pelicula extends Component {
                     )
                 })
                 }
+                <div style={ { border: "1px solid red" } } className="imageApi">
+                    { this.getCharacteres }
+                    { this.state.imageApi ?
+                        (
+                            <>
+                                <img src={ this.state.imageApi }></img>
+                                <p> <b>{ this.state.nameApi }</b> </p>
+                            </>
+
+                        )
+                        :
+                        (
+                            <p>Aún no se han enviado datos</p>
+                        )
+                    }
+                </div>
             </div >)
     }
 
