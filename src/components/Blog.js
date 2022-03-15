@@ -9,7 +9,7 @@ class Blog extends Component {
             <>
                 <Slider title="Blog"></Slider>
                 <div className="center">
-                    <Peliculas></Peliculas>
+
                 </div>
             </>
         )

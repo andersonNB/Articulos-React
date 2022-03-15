@@ -34,15 +34,15 @@ class Peliculas extends Component {
 
 
     componentDidMount() {
-        // alert("Componente did Mount")
+        alert("Componente did Mount")
     }
 
     componentWillMount() {
-        // alert("Componente will Mount")
+        alert("Componente will Mount")
     }
 
     render() {
-        // alert("render")
+        alert("render")
         console.log("key", this.state.key)
         console.log(this.marcarFavoritaPadre)
         console.log("nombrePelicula", this.state.nombrePelicula)

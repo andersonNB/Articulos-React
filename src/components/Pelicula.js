@@ -11,6 +11,7 @@ class Pelicula extends Component {
             img: null,
             imageApi: null,
             nameApi: "",
+            nextPage: 1,
         };
     }
 
@@ -65,9 +66,15 @@ class Pelicula extends Component {
         this.props.marcarFavoritaPadre(item, key)
     };
 
-    getCharacteres = async () => {
 
-        const peticion = await fetch(`https://rickandmortyapi.com/api/character/1`)
+
+    getCharacteres = async () => {
+        console.log("NExt page en el metodo", this.state.nextPage)
+        this.setState({
+            nextPage: this.state.nextPage + 1,
+        })
+
+        const peticion = await fetch(`https://rickandmortyapi.com/api/character/${this.state.nextPage}`)
             .then((res) => res.json())
         console.log("peticion", peticion)
 
@@ -81,12 +88,16 @@ class Pelicula extends Component {
 
     }
 
+    // nextPage = () => {
+    //     console.log("click")
+    // }
+
 
     render() {
         console.log("props render", this.props);
         const { peliculas } = this.props
         console.log("destruc peliculas props", peliculas.titulo)
-
+        console.log("NExt page en el render", this.state.nextPage)
         return (
 
             <div id="articles" className="peliculas">
@@ -108,7 +119,6 @@ class Pelicula extends Component {
                 })
                 }
                 <div style={ { border: "1px solid red" } } className="imageApi">
-                    { this.getCharacteres }
                     { this.state.imageApi ?
                         (
                             <>
@@ -122,6 +132,7 @@ class Pelicula extends Component {
                             <p>Aún no se han enviado datos</p>
                         )
                     }
+                    <button onClick={ this.getCharacteres.bind(this) }>Siguiente</button>
                 </div>
             </div >)
     }
