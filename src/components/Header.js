@@ -26,11 +26,11 @@ class Header extends Component {
                                 <NavLink to="/" className={ ({ isActive }) => isActive ? 'active' : "" }>Inicio</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/blog">Blog</NavLink>
+                                <NavLink to="/blog">Gif expert App</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/pagina-1">Página 4</NavLink>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to={ `/noExisteNRouter/${usuario}` }>Página 1</Link>
                             </li>

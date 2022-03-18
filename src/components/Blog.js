@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Slider from "./Slider";
-import Peliculas from './Peliculas';
+import GifExpertApp from "./GifExpertApp";
 
 class Blog extends Component {
 
@@ -9,7 +9,7 @@ class Blog extends Component {
             <>
                 <Slider title="Blog"></Slider>
                 <div className="center">
-
+                    <GifExpertApp></GifExpertApp>
                 </div>
             </>
         )
