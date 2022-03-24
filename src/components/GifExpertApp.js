@@ -1,5 +1,6 @@
 import react, { useState } from 'react';
 import AddCategory from './AddCategory';
+import GifGrid from './GifGrid';
 
 const GifExpertApp = () => {
 
@@ -7,7 +8,7 @@ const GifExpertApp = () => {
     //lo ideal es usar el hook useState
     // const categoria = ['One Punch', 'Samurai X', 'Dragon Ball']
 
-    const [categoria, setCategoria] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
+    const [categoria, setCategoria] = useState(['One Punch']);
 
     const handleAdd = () => {
 
@@ -23,9 +24,10 @@ const GifExpertApp = () => {
             <button onClick={ handleAdd }>Agregar</button>
             <AddCategory setCategoria={ setCategoria }></AddCategory>
             {
-                categoria.map((valor) => {
+                categoria.map((categoria) => {
 
-                    return <li key={ valor }> { valor } </li>
+                    // return <li key={ valor }> { valor } </li>
+                    return <GifGrid key={ categoria } categoria={ categoria } />
                 })
             }
         </>

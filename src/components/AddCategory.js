@@ -12,12 +12,13 @@ const AddCategory = ({ setCategoria }) => {
         setInputValue(e.target.value)
     }
 
+    //el enter del formulario es un evento normal
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("Enviado rey")
 
         if (inputValue !== undefined && inputValue !== "") {
-            // es un calback y guarda el estado anterior, para este caso el array
+            // es un callback y guarda el estado anterior, para este caso el array
             setCategoria(cat => [...cat, inputValue])
             //reseteamos el valor
             setInputValue('');

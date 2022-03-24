@@ -107,7 +107,7 @@ class Pelicula extends Component {
                 { this.state.peliculas.map((item, key) => {
                     return (
                         <>
-                            <article className="article-item" id="article-template" key={ key } style={ { width: "200px" } }>
+                            <article className="article-item" id="article-template" key={ key + 1 } style={ { width: "200px" } }>
                                 <h2>{ item.titulo } </h2>
                                 <div className="image-wrap">
                                     <img src={ item.imagen } alt={ item.titulo } />
