@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import GifGridItem from "./GifGridItem";
 
 const GifGrid = ({ categoria }) => {
 
-    const [page, setPage] = useState(0)
+    // const [page, setPage] = useState(0)
+    const [images, setImages] = useState([])
+
+    useEffect(() => {
+        getGifs();
+    }, [])
 
     const getGifs = async () => {
 
@@ -21,6 +27,8 @@ const GifGrid = ({ categoria }) => {
         }))
 
         console.log(gifsApi)
+        //Establecemos el estado
+        setImages(gifsApi)
     }
 
     function prueba() {
@@ -29,15 +37,28 @@ const GifGrid = ({ categoria }) => {
 
 
     //AL estar la función ejecutandose al mismo nivel
-    getGifs()
+    // se puede ver en el navegador
+    //getGifs()
 
     prueba()
 
     return (
         <>
             <h3>{ categoria }</h3>
-            <h3>{ page } </h3>
-            <button onClick={ () => setPage(page + 1) } >Click</button>
+            {/* <h3>{ page } </h3>
+            <button onClick={ () => setPage(page + 1) } >Click</button> */}
+            {
+
+                images.map((img) => {
+                    return (
+                        <GifGridItem
+                            img={ img }
+                            key={ img.id } />
+                    )
+
+                })
+            }
+
         </>
     )
 }

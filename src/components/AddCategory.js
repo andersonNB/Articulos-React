@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import '../assets/css/Input.css';
+import GifGrid from "./GifGrid";
 
 const AddCategory = ({ setCategoria }) => {
 
@@ -33,9 +34,11 @@ const AddCategory = ({ setCategoria }) => {
                     type="text"
                     value={ inputValue }
                     onChange={ handelInputChange }
+                    placeholder="Enter your Character"
                 />
             </form>
-            <h2>{ inputValue }</h2>
+            <h3>{ inputValue }</h3>
+
         </>
     )
 }
