@@ -37,8 +37,11 @@ class Header extends Component {
                             <li>
                                 <NavLink to="/pruebas/">Página 2</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/navigate">Página 3</NavLink>
+                            </li> */}
+                            <li>
+                                <NavLink to="/grid">Grid Ant</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/ruta-prueba">Formulario</NavLink>

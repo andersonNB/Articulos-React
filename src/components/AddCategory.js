@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import '../assets/css/Input.css';
-import GifGrid from "./GifGrid";
+// import GifGrid from "./GifGrid";
 
 const AddCategory = ({ setCategoria }) => {
 
@@ -20,7 +20,9 @@ const AddCategory = ({ setCategoria }) => {
 
         if (inputValue !== undefined && inputValue !== "") {
             // es un callback y guarda el estado anterior, para este caso el array
-            setCategoria(cat => [...cat, inputValue])
+            //Si lo colocamos así pone primero el estado anterior y luego lo que le pasemos
+            //al colocarlo al reves saldría de primero lo que digitemos en el input
+            setCategoria(cat => [inputValue, ...cat])
             //reseteamos el valor
             setInputValue('');
         }
@@ -38,7 +40,6 @@ const AddCategory = ({ setCategoria }) => {
                 />
             </form>
             <h3>{ inputValue }</h3>
-
         </>
     )
 }

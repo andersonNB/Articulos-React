@@ -8,13 +8,13 @@ const GifExpertApp = () => {
     //lo ideal es usar el hook useState
     // const categoria = ['One Punch', 'Samurai X', 'Dragon Ball']
 
-    const [categoria, setCategoria] = useState(['One Punch']);
+    const [categoria, setCategoria] = useState(['Jack Skellington']);
 
     const handleAdd = () => {
 
         //concat o push o spread
         //setCategoria(...categoria,'One piece')
-        setCategoria(categoria.concat('One piece'))
+        setCategoria(categoria.concat('Samurai X'))
     }
 
     return (

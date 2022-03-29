@@ -11,6 +11,7 @@ import MiComponentePrueba from './components/MiComponentePrueba';
 import Dashboard from './components/Dashboard'
 import Home from './components/Home'
 import Blog from './components/Blog'
+import GridAnt from "./components/GridAnt";
 
 class Router extends Component {
 
@@ -38,6 +39,7 @@ class Router extends Component {
                             <Route path="console" element={ () => { console.log("De esta manera si se puede") } } />
                         </Route>
                         <Route path="*" element={ <Error /> } />
+                        <Route path="/grid" element={ <GridAnt /> } />
                     </Routes>
                 </BrowserRouter>
 

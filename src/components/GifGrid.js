@@ -1,35 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { useFetchGifs } from "../hooks/useFetchGifs";
 import GifGridItem from "./GifGridItem";
 
 const GifGrid = ({ categoria }) => {
 
     // const [page, setPage] = useState(0)
-    const [images, setImages] = useState([])
+    // const [images, setImages] = useState([])
 
-    useEffect(() => {
-        getGifs();
-    }, [])
-
-    const getGifs = async () => {
-
-        const url = 'http://api.giphy.com/v1/gifs/search?q=Vegeta&limit=10&api_key=6pLfEjnR18zDQ74fEZmBuvMgkUDqphyE';
-        const repuesta = await fetch(url);
-
-        const { data } = await repuesta.json()
+    //Custom Hook
+    //data es la propiedad y images es el sobrenombre que le doy
+    const { data: images, loading } = useFetchGifs(categoria);
 
 
-        const gifsApi = data.map((item => {
-            return {
-                id: item.id,
-                title: item.title,
-                url: item.images?.downsized_medium.url,
-            }
-        }))
+    //Si le paso un array vacio solo recarga una vez el componente
+    //si le paso el valor a mostrar entre los corchetes recargara 
+    //el componente en caso de hubiese cambios
 
-        console.log(gifsApi)
-        //Establecemos el estado
-        setImages(gifsApi)
-    }
+    // useEffect(() => {
+    //     getGifs(categoria).then(
+    //         (imgs) => {
+    //             setImages(imgs)
+    //         }
+    //     )
+    // }, [categoria])
+
 
     function prueba() {
         console.log("si funciona de esta manera")
@@ -45,20 +39,36 @@ const GifGrid = ({ categoria }) => {
     return (
         <>
             <h3>{ categoria }</h3>
-            {/* <h3>{ page } </h3>
-            <button onClick={ () => setPage(page + 1) } >Click</button> */}
-            {
 
-                images.map((img) => {
+            <div className="card-grid">
+                {/* { loading ? 'Cargando...' : 'Data Cargada' } */ }
+                { loading && 'Cargando...' }
+                { images.map((img) => {
                     return (
                         <GifGridItem
                             img={ img }
                             key={ img.id } />
                     )
 
-                })
-            }
+                }) }
 
+            </div>
+            {/* <div className="card-grid">
+               <h3>{ page } </h3>
+            <button onClick={ () => setPage(page + 1) } >Click</button> 
+                {
+
+                    images.map((img) => {
+                        return (
+                            <GifGridItem
+                                img={ img }
+                                key={ img.id } />
+                        )
+
+                    })
+                }
+
+            </div> */}
         </>
     )
 }
