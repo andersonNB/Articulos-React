@@ -31,8 +31,11 @@ class Header extends Component {
                             {/* <li>
                                 <NavLink to="/pagina-1">Página 4</NavLink>
                             </li> */}
-                            <li>
+                            {/* <li>
                                 <Link to={ `/noExisteNRouter/${usuario}` }>Página 1</Link>
+                            </li> */}
+                            <li>
+                                <Link to={ "/hooks" }>Hooks</Link>
                             </li>
                             <li>
                                 <NavLink to="/pruebas/">Página 2</NavLink>

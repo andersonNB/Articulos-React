@@ -21,7 +21,7 @@ class MiComponente extends React.Component {
                     {
                         receta.ingredients.map((item, i) => {
                             console.log(item, i)
-                            return (<h3 key={ i } > { item }</h3>);
+                            return (<div key={ i } > { item }</div>);
                         })
                     }
                 </h3>

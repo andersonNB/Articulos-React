@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard'
 import Home from './components/Home'
 import Blog from './components/Blog'
 import GridAnt from "./components/GridAnt";
+import CounterApp from "./components/Profundizando Hooks/useState/CounterApp"
 
 class Router extends Component {
 
@@ -40,6 +41,7 @@ class Router extends Component {
                         </Route>
                         <Route path="*" element={ <Error /> } />
                         <Route path="/grid" element={ <GridAnt /> } />
+                        <Route path="/hooks" element={ <CounterApp /> } />
                     </Routes>
                 </BrowserRouter>
 

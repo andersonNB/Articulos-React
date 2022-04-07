@@ -302,6 +302,7 @@ textarea {
 }
 
 .article-item {
+	border: 1px solid blue !important;
 	width: 100%;
 	border-bottom: 1px solid #eee;
 	padding-bottom: 20px;

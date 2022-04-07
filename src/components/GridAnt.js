@@ -36,38 +36,43 @@ class GridAnt extends Component {
                 <Divider>1 columna (24)</Divider>
 
                 <Row>
-                    <Col span={ 24 }>
+                    <Col xs={ 12 } sm={ 24 }>
                         <div style={ { backgroundColor: '#61DAFB', color: 'black' } }> Columna</div>
                     </Col>
                 </Row>
                 <Divider>2 columna (12)</Divider>
                 <Row gutter={ [48, 8] }>
-                    <Col span={ 12 } >
+                    <Col xs={ 24 } sm={ 12 } >
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
                             Columna 2
                         </div>
                     </Col>
-                    <Col span={ 12 } >
+                    <Col xs={ 24 } sm={ 12 } >
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
                             Columna 2.1
                         </div>
                     </Col>
                 </Row>
-                <Divider>3 columna (8)</Divider>
-                <Row gutter={ [48, 8] }>
-                    <Col span={ 8 } style={ { backgroundColor: 'purple', color: 'black' } }>
+                <Divider>3 columna (8) y 1 de (9)</Divider>
+                <Row gutter={ [0, 8] }>
+                    <Col xs={ 8 } sm={ 8 } md={ 24 } lg={ 12 } style={ { backgroundColor: 'purple', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            1
                         </div>
                     </Col>
-                    <Col span={ 8 } style={ { backgroundColor: 'green', color: 'black' } }>
+                    <Col xs={ 8 } sm={ 8 } md={ 24 } lg={ 6 } style={ { backgroundColor: 'green', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            2
                         </div>
                     </Col>
-                    <Col span={ 8 } style={ { backgroundColor: 'yellow', color: 'black' } }>
+                    <Col xs={ 8 } sm={ 8 } md={ 24 } lg={ 6 } style={ { backgroundColor: 'green', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            3
+                        </div>
+                    </Col>
+                    <Col xs={ 12 } sm={ 24 } md={ 24 } style={ { backgroundColor: 'yellow', color: 'black' } }>
+                        <div style={ { backgroundColor: 'purple', color: 'black' } }>
+                            9
                         </div>
                     </Col>
                 </Row>
@@ -75,24 +80,24 @@ class GridAnt extends Component {
                 <Divider>4 columna (6)</Divider>
                 {/* horizontal, vertical */ }
                 <Row gutter={ [48, 8] }>
-                    <Col span={ 6 } style={ { backgroundColor: 'yellow', color: 'black' } }>
+                    <Col xs={ 6 } lg={ 24 } style={ { backgroundColor: 'yellow', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            1
                         </div>
                     </Col>
-                    <Col span={ 6 } style={ { backgroundColor: 'yellow', color: 'black' } }>
+                    <Col span={ 6 } lg={ 24 } style={ { backgroundColor: 'yellow', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            2
                         </div>
                     </Col>
-                    <Col span={ 6 } style={ { backgroundColor: 'yellow', color: 'black' } }>
+                    <Col span={ 6 } lg={ 24 } style={ { backgroundColor: 'yellow', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            3
                         </div>
                     </Col>
-                    <Col span={ 6 } style={ { backgroundColor: 'yellow', color: 'black' } }>
+                    <Col span={ 6 } lg={ 24 } style={ { backgroundColor: 'yellow', color: 'black' } }>
                         <div style={ { backgroundColor: 'purple', color: 'black' } }>
-                            Columna 2.1
+                            4
                         </div>
                     </Col>
                 </Row>

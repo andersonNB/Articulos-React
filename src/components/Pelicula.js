@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'antd'
 import '../assets/css/Peliculas.css';
 
 class Pelicula extends Component {
@@ -106,15 +107,17 @@ class Pelicula extends Component {
 
                 { this.state.peliculas.map((item, key) => {
                     return (
-                        <>
-                            <article className="article-item" id="article-template" key={ key + 1 } style={ { width: "200px" } }>
-                                <h2>{ item.titulo } </h2>
-                                <div className="image-wrap">
-                                    <img src={ item.imagen } alt={ item.titulo } />
-                                </div>
-                                <button onClick={ () => this.marcarFavoritaHijo(item.titulo, key) }>Marcar favorita</button>
-                            </article>
-                        </>
+                        <article className="article-item" id="article-template" key={ key + 1 } style={ { width: "200px" } }>
+                            <Row>
+                                <Col xs={ 24 } md={ 12 } lg={ 8 } >
+                                    <h2>{ item.titulo } </h2>
+                                    <div className="image-wrap">
+                                        <img src={ item.imagen } alt={ item.titulo } />
+                                    </div>
+                                </Col>
+                            </Row>
+                            <button onClick={ () => this.marcarFavoritaHijo(item.titulo, key) }>Marcar favorita</button>
+                        </article>
                     )
                 })
                 }
