@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import CounterWithCustomHooks from "../CounterWithCustomHooks"
 import SimpleForm from "../useEffect/SimpleForm"
+import FormWithCustomHook from "../useEffect/FormWithCustomHook"
+import MultipleCustomHooks from "../../MultipleCustomHooks"
 
 const CounterApp = () => {
 
@@ -32,6 +34,9 @@ const CounterApp = () => {
 
             <CounterWithCustomHooks />
             <SimpleForm />
+            <FormWithCustomHook />
+
+            <MultipleCustomHooks />
         </>
     )
 }

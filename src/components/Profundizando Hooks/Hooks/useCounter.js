@@ -5,12 +5,14 @@ export const useCounter = (initialState = 10) => {
     const [stateHook, setStateHook] = useState(initialState)
 
 
-    const increment = (factor) => {
-        setStateHook(stateHook + factor)
+    // CounterWithCustomHooks
+    const increment = () => {
+        setStateHook(stateHook + 1)
     }
 
-    const decrement = (factor) => {
-        setStateHook(stateHook - factor)
+    // CounterWithCustomHooks
+    const decrement = () => {
+        setStateHook(stateHook - 1)
     }
 
     const reset = () => {

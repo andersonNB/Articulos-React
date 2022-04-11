@@ -10,7 +10,7 @@ const CounterWithCustomHooks = () => {
             <h2>{ counter } </h2>
             <hr />
 
-
+            {/* Le pasamos parametros a los metodos del hook */ }
             <button onClick={ () => increment(2) } >+1</button>
             <button onClick={ () => decrement(2) } >-1</button>
             <button onClick={ reset } >Reset</button>

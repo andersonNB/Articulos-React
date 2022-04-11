@@ -36,8 +36,8 @@ const Message = () => {
     return (
         <>
             <div>Se cargo el componente</div>
-            <h3>{ x } </h3>
-            <h3>{ y } </h3>
+            <h3>x:{ x } </h3>
+            <h3>y:{ y } </h3>
         </>
     )
 }
