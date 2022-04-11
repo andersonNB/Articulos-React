@@ -9,6 +9,7 @@ const MultipleCustomHooks = () => {
     const { stateHook, increment } = useCounter(1);
 
     const [state, img] = useFetch(`https://www.breakingbadapi.com/api/quotes/${stateHook}`);
+
     // console.log(state)
     const { loading, error, data } = state
     console.log(data)
@@ -28,11 +29,11 @@ const MultipleCustomHooks = () => {
                 <footer>{ author }</footer>
             </blockquote>
 
-            <button onClick={ increment } >
+            <button onClick={ increment } style={ { display: 'block', margin: '0px auto' } }>
                 Siguiente frase
             </button>
 
-            <img src={ img.img } alt={ img.name } />
+            <img src={ img.img } alt={ img.name } style={ { height: '250px', width: '250px' } } />
         </div>
     )
 }

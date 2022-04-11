@@ -3,6 +3,9 @@ import CounterWithCustomHooks from "../CounterWithCustomHooks"
 import SimpleForm from "../useEffect/SimpleForm"
 import FormWithCustomHook from "../useEffect/FormWithCustomHook"
 import MultipleCustomHooks from "../../MultipleCustomHooks"
+import FocusScreen from "../useRef/FocusScreen"
+import Layout from "../useLayoutEffect/Layout"
+import Memorize from "../Memo/Memorize"
 
 const CounterApp = () => {
 
@@ -37,6 +40,14 @@ const CounterApp = () => {
             <FormWithCustomHook />
 
             <MultipleCustomHooks />
+
+            <FocusScreen />
+
+
+            <Layout />
+
+            <Memorize />
+
         </>
     )
 }
