@@ -6,6 +6,9 @@ import MultipleCustomHooks from "../../MultipleCustomHooks"
 import FocusScreen from "../useRef/FocusScreen"
 import Layout from "../useLayoutEffect/Layout"
 import Memorize from "../Memo/Memorize"
+import MemoHook from "../Memo/MemoHook"
+import CallBackHook from "../Memo/CallBackHook"
+import { Padre } from "../07-tarea-memo/Padre"
 
 const CounterApp = () => {
 
@@ -47,6 +50,12 @@ const CounterApp = () => {
             <Layout />
 
             <Memorize />
+
+            <MemoHook />
+
+            <CallBackHook />
+
+            <Padre />
 
         </>
     )
