@@ -9,6 +9,7 @@ import Memorize from "../Memo/Memorize"
 import MemoHook from "../Memo/MemoHook"
 import CallBackHook from "../Memo/CallBackHook"
 import { Padre } from "../07-tarea-memo/Padre"
+import IntroReducer from "../useReducer/IntroReducer"
 
 const CounterApp = () => {
 
@@ -56,6 +57,9 @@ const CounterApp = () => {
             <CallBackHook />
 
             <Padre />
+
+
+            <IntroReducer />
 
         </>
     )
