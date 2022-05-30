@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Col, Row, Divider, Modal, Form, Input, Button } from 'antd';
+import { Col, Row, Divider, Modal, Form, Input, Button, Space, Select, DatePicker, Upload, Table } from 'antd';
+import { UploadOutlined, } from '@ant-design/icons';
 import 'antd/dist/antd.css'
 
 class GridAnt extends Component {
@@ -28,6 +29,39 @@ class GridAnt extends Component {
             visible: false,
         })
     }
+
+    dataSource = [
+        {
+            key: '1',
+            name: 'Mike',
+            age: 32,
+            address: '10 Downing Street',
+        },
+        {
+            key: '2',
+            name: 'John',
+            age: 42,
+            address: '10 Downing Street',
+        },
+    ];
+
+    columns = [
+        {
+            title: 'Name',
+            dataIndex: 'name',
+            key: 'name',
+        },
+        {
+            title: 'Age',
+            dataIndex: 'age',
+            key: 'age',
+        },
+        {
+            title: 'Address',
+            dataIndex: 'address',
+            key: 'address',
+        },
+    ];
 
     render() {
         return (
@@ -190,6 +224,44 @@ class GridAnt extends Component {
                         </Form.Item>
                     </Form>
                 </Modal>
+
+                <Space style={ { backgroundColor: '#C1F4C5' } }>
+                    <Form layout="vertical"
+                        onFinish={ this.handleSubmit }
+                        onFinishFailed={ this.handleSubmitFaield }>
+                        <Form.Item>
+                            <Form.Item name="pruebaSelect">
+                                <Select placeholder="Seleccione una opción">
+                                    <Select.Option value="3">Total</Select.Option>
+                                    <Select.Option value="4">Parcial</Select.Option>
+                                </Select>
+                            </Form.Item>
+                            <h4>Prueba Titulo Select</h4>
+                        </Form.Item>
+                        <Form.Item >
+                            <Form.Item name="pruebaFecha">
+                                <DatePicker placeholder="Selecciona una fecha" />
+                            </Form.Item>
+                            <h4>Prueba Titulo Fecha</h4>
+                        </Form.Item>
+                        <Form.Item>
+                            <Form.Item name="pruebaArchivo">
+                                <Upload>
+                                    <Button icon={ <UploadOutlined /> }>Seleccione un archivo</Button>
+                                </Upload>
+                            </Form.Item>
+                            <h4>Prueba Titulo Archivo</h4>
+                        </Form.Item>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" style={ { backgroundColor: '#194978', width: '75px', height: '44px' } }>
+                                Cargar
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Space>
+
+                <Divider>Tabla</Divider>
+                <Table dataSource={ this.dataSource } columns={ this.columns } />
             </>
         )
     }
