@@ -8,6 +8,7 @@ class GridAnt extends Component {
 
     state = {
         visible: true,
+        prueba: "esto es una prueba",
     }
 
     handleSubmit = (data) => {
@@ -63,7 +64,17 @@ class GridAnt extends Component {
         },
     ];
 
+
+
+
+    handleSubmitTextArea = (data) => {
+        console.log("data enviada: ", data)
+    }
+
+    handleErrorTextArea = () => console.warn
     render() {
+        console.log("this.state.prueba: ", this.state.prueba)
+
         return (
             <>
                 <h1>Sistem Grid</h1>
@@ -262,6 +273,39 @@ class GridAnt extends Component {
 
                 <Divider>Tabla</Divider>
                 <Table dataSource={ this.dataSource } columns={ this.columns } />
+
+                <Divider>Prueba textArea</Divider>
+                <Form
+                    onFinish={ this.handleSubmitTextArea }
+                    onFinishFailed={ this.handleErrorTextArea }
+                    initialValues={ { textArea: this.state.prueba } }
+                >
+                    <Row style={ { backgroundColor: '#C1F4C5' } }>
+                        <Col style={ { backgroundColor: '#D4D925' } }>
+                            <Form.Item>
+                                <h4>Comunicación</h4>
+                                <Form.Item name="textArea">
+                                    <Space style={ { backgroundColor: '#EF9F9F' } } >
+                                        <Input.TextArea ></Input.TextArea>
+                                    </Space>
+                                </Form.Item>
+                            </Form.Item>
+                        </Col>
+
+                        <Col style={ { backgroundColor: '#FFEE63' } }>
+                            <Form.Item>
+                                <Form.Item name="input">
+                                    <Input></Input>
+                                </Form.Item>
+                            </Form.Item>
+                        </Col>
+
+                    </Row>
+
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" >Enviar</Button>
+                    </Form.Item>
+                </Form>
             </>
         )
     }
